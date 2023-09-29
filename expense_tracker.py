@@ -12,7 +12,7 @@ def add_expense(date, amount, description):
 
 def view_expenses():
     if not expenses:
-        print("You have not recoreded an expense yet!")
+        print("You have not recorded an expense yet!")
     else:
         print("List of expenses")
         print("----------------")
@@ -29,7 +29,7 @@ if __name__ == "__main__":
         print("1. Add Expense")
         print("2. View Expenses")
         print("3. Calculate Total Expenses")
-        print("4. Calcualte Average Montly Expense")
+        print("4. Calcualte Average Monthly Expense")
         print("5. Exit")
 
         userChoice = input("Enter the value of the item you wish to do: ")
