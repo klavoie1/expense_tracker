@@ -8,7 +8,7 @@ def calculate_total_expenses(expenses):
 def calculate_average_monthly_expense(expenses):
     monthly_expense = defaultdict(float)
     for expense in expenses:
-        date = datetime.strptime(expense["date"], "%Y-%m-%d")
+        date = datetime.strptime(expense["date"], "%m-%d-%Y")
         month_date = date.strftime("%Y-%m")
         monthly_expense[month_date] += expense["amount"]
 
