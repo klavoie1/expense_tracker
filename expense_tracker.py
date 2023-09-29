@@ -1,4 +1,5 @@
 from decimal import *
+import calculation
 
 def add_expense(date, amount, description):
     expense = {
@@ -27,18 +28,26 @@ if __name__ == "__main__":
         print("-----------------\n")
         print("1. Add Expense")
         print("2. View Expenses")
-        print("3. Exit")
+        print("3. Calculate Total Expenses")
+        print("4. Calcualte Average Montly Expense")
+        print("5. Exit")
 
         userChoice = input("Enter the value of the item you wish to do: ")
 
         if userChoice == "1":
             date = input("Enter the date of the expense (i.e mm-dd-yyyy): ")
-            amount = Decimal(input("Enter the expense amount: $"))
+            amount = float(input("Enter the expense amount: $"))
             description = input("Enter the description of the expense: ")
             add_expense(date, amount, description)
         elif userChoice == "2":
             view_expenses()
         elif userChoice == "3":
+            total = calculation.calculate_total_expenses(expenses)
+            print(f"\nTotal Expenses: ${total:.2f}")
+        elif userChoice == "4":
+            monthly_average = calculation.calculate_average_monthly_expense(expenses)
+            print(f"\nAverage Monthly Expense: ${monthly_average:.2f}")
+        elif userChoice == "5":
             break
         else:
             print("Invalid choice! Please try again.")
